@@ -1,1 +1,1 @@
-# Bioinformatics Computing
+# Bioinformatics Computing -- Taught by Dr. Scott Emrich
