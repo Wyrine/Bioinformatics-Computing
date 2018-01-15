@@ -12,19 +12,19 @@ def reverseComplement(fileName = "lambda.fasta"):
 		with open(fileName.split(".")[0] + ".rev.fasta", "w+") as revFile:	
 			for line in fastFile:
 				if line[0] != ">":
-					#if len(newSequence) > 0: newSequence =  newSequence 
 					for char in line:
 						if char == "A" or char == "T":
 							newSequence = ("A" if char == "T"  else "T") + newSequence
 						elif char == "G" or char == "C":
 							newSequence = ("G" if char == "C"  else "C") + newSequence
 						else: continue
-					newSequence = "\n" + newSequence  
 				else:	
 					first = line.split(" ")
 					first[0] = ">reversed"
 					revFile.write(" ".join(first))
-			revFile.write(newSequence + "\n")
+			for i in range(0, len(newSequence), 70):
+				revFile.write(newSequence[i: i+70] + "\n")
+			revFile.write("\n")
 				
 if __name__ == "__main__":	
 	if len(sys.argv) == 2:
