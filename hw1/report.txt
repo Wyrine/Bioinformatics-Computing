@@ -1,0 +1,20 @@
+Kirolos Shahat
+1/23/17
+CS 494
+
+1. I agree to the honor code statement in the syllabus.
+3. The program that reverse complements the sequence is rev.py which 
+	 is already an executable and thus can just be executed as "./rev.py" 
+	 but can be given a command line argument as a .fasta file in order to 
+	 reverse complement other files. 
+4. Similar to the program listed in number 3, the program that computes
+   frequencies is freq.py and is already an executable and thus can be
+   run with "./freq.py" command. It is implemented in python3 and needs no
+   external libraries. Also similar to rev.py, it can optionally take
+   a command line argument which is a fasta file in order to compute
+   the frequencies of a nucleotide and dinucleotide sequence. My
+   results for nucleotide frequencies were as follows:
+   A: 0.2542987918023999
+   C: 0.23425838109768668
+   T: 0.24712382994515691
+	 G: 0.2643189971547565 
