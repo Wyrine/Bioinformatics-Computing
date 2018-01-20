@@ -15,8 +15,27 @@ CS 494
    external libraries. Also similar to rev.py, it can optionally take
    a command line argument which is a fasta file in order to compute
    the frequencies of a nucleotide and dinucleotide sequence. My
-   results for nucleotide frequencies were as follows:
-	 {'A': 0.2542987918023999, 'T': 0.24712382994515691, 'G': 0.2643189971547565, 'C': 0.		23425838109768668}
+   results for frequencies were as follows:
 
-	 And dinucleotide frequencies were as follows:
-	 
+	 Nucleotide Frequences:
+	 A: 0.2542987918023999
+	 C: 0.23425838109768668
+	 G: 0.2643189971547565
+	 T: 0.24712382994515691
+	 Dinucleotide Frequencies:
+	 AA: 0.07612057234753206
+	 AC: 0.053049358789328274
+	 AG: 0.05632757412065482
+	 AT: 0.06880128654488475
+	 CA: 0.06630654406003876
+	 CC: 0.05148241309636716
+	 CG: 0.06418292029194672
+	 CT: 0.05228650364933405
+	 GA: 0.06713125231949198
+	 GC: 0.07453300894808461
+	 GG: 0.06556430662653087
+	 GT: 0.057069811554162714
+	 TA: 0.0447404230753371
+	 TC: 0.05519360026390664
+	 TG: 0.07822357840913777
+	 TT: 0.06896622819677539
