@@ -16,7 +16,7 @@ def reverseComplement(fileName):
 		for line in fastFile:
 			if line[0] != ">":
 				for char in line:
-					if char == "A" or char == "T":
+					if char == "A" or char == "T" or char == "N":
 						newSequence = ("A" if char == "T"  else "T") + newSequence
 					elif char == "G" or char == "C":
 						newSequence = ("G" if char == "C"  else "C") + newSequence
