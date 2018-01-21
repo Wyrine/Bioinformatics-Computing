@@ -4,7 +4,7 @@ import sys
 from math import log
 import freq
 
-def getSequenceProb(testingFile, baseProbability):
+def getMultiProb(testingFile, baseProbability):
 	""" Given base probabilities as a dictionary parameter
 			from a training sequence, calculates the probability
 			the testing sequence assuming independent probabilities
@@ -16,13 +16,13 @@ def getSequenceProb(testingFile, baseProbability):
 	testSequence = "".join(testSequence)
 	testSequence = testSequence.replace("N", "A")
 	probab = {}
-	#Assume independence, thus pr(A*A) = pr(A) ^ 2
+	#Assume independence, thus pr(A*A) = pr(A) ** 2
 	for key in "ACGT":
 		probab[key] = baseProbability[key] ** testSequence.count(key)
 	testMulti = 1
 	for val in probab.values():
 		testMulti *= val
-	return testMulti
+	return log(testMulti)
 
 def getConditionalMultiProb(trainVal, testVal):
 	ratio = testVal / trainVal
@@ -38,5 +38,5 @@ if __name__ == "__main__":
 	trainVal = 1
 	for val in baseProbability.values():
 		trainVal *= val
-	testVal = getSequenceProb(testingFile, baseProbability)
-	print(getConditionalMultiProb(trainVal, testVal))
+	logMultiProb = getMultiProb(testingFile, baseProbability)
+	print("Log probability (multinomial):", logMultiProb)
