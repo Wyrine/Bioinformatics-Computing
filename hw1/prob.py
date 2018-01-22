@@ -11,10 +11,8 @@ def getMultiProb(testingFile, baseProbability):
 			in the base appearance pattern.
 	"""
 	with open(testingFile) as test:
-		testSequence = test.read().splitlines()
-	del testSequence[0]
-	testSequence = "".join(testSequence)
-	testSequence = testSequence.replace("N", "A")
+		test.readline()
+		testSequence = test.read().replace("N", "A")
 	probab = {}
 	#Assume independence, thus pr(A*A) = pr(A) ** 2
 	for key in "ACGT":
@@ -24,9 +22,28 @@ def getMultiProb(testingFile, baseProbability):
 		testMulti *= val
 	return log(testMulti)
 
-def getConditionalMultiProb(trainVal, testVal):
-	ratio = testVal / trainVal
-	return log(ratio)
+def getMarkovProb(testingFile, baseProbability, order):
+	with open(testingFile) as test:
+		test.readline()
+		seq = test.read().replace("N", "A").replace("\n", "")
+	freq = {}
+	for index in range(0, len(seq) - order):
+		temp = seq[index:index+order+1]
+		if temp not in freq:
+			freq[temp] = 0
+		freq[temp] += 1
+	probBP = {}
+	markProb = 0
+	for k, v in freq.items():
+		freq[k] = v/ (len(seq) - order)
+		if k[-1] not in probBP:
+			probBP[k[-1]] = freq[k]
+		else:
+			probBP[k[-1]] *= freq[k]
+	for k, v in probBP.items():
+				markProb += log(v) + log(baseProbability[k])
+	print(markProb)
+
 
 if __name__ == "__main__":
 	trainingFile = "human_mito.fasta"
@@ -40,3 +57,4 @@ if __name__ == "__main__":
 		trainVal *= val
 	logMultiProb = getMultiProb(testingFile, baseProbability)
 	print("Log probability (multinomial):", logMultiProb)
+	logMarkProb = getMarkovProb(testingFile, baseProbability, 3)

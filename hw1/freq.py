@@ -25,20 +25,18 @@ def diNucFreq(fileName):
 			size 16
 	"""
 	numFreqs = {}
-	for first in "ACGT":
-		for second in "ACGT":
-			numFreqs[first + second] = 0
 	with open(fileName) as fastFile:
-		lines = fastFile.read().splitlines()
-	del lines[0]
-	seq = "".join(lines)
-	seq = seq.replace("N", "A")
+		fastFile.readline()
+		seq = fastFile.read().replace("N", "A").replace("\n", "")
 	#wanted to use count here as well but it did not give the proper
 	#value because "AAA".count("AA") = 1 but it should be 2
 	for i in range(0, len(seq) - 1):
-		numFreqs[seq[i] + seq[i+1]] += 1
+		temp = seq[i:i+2]
+		if temp not in numFreqs:
+			numFreqs[temp] = 0
+		numFreqs[temp] += 1
 	for key in numFreqs:
-		numFreqs[key] /= len(seq)
+		numFreqs[key] /= (len(seq) - 1)
 	return numFreqs
 
 if __name__ == "__main__":
@@ -49,5 +47,14 @@ if __name__ == "__main__":
 	for key, val in nucFreq(fileName).items():
 		print("\t " + str(key) + ":", str(val)) 
 	print("\t Dinucleotide Frequencies:")
-	for key, val in diNucFreq(fileName).items():
-		print("\t " + str(key) + ":", str(val)) 
+	diNuc = diNucFreq(fileName)
+	for bp1 in "ACGT":
+		for bp2 in "ACGT":
+			print("\t " + bp1 + bp2 + ":", diNuc[bp1+bp2])
+#	for key, val in diNucFreq(fileName).items():
+#		print("\t " + str(key) + ":", str(val)) 
+
+
+
+
+
