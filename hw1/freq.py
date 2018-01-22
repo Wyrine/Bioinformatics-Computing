@@ -8,15 +8,14 @@ def nucFreq(fileName):
 	"""
 	numFreqs = {}
 	with open(fileName) as fastFile:
-		lines = fastFile.read().splitlines()
-	del lines[0]
-	seq = "".join(lines)	
-	numFreqs['A'] = seq.count("A") + seq.count("N")	
-	numFreqs['C'] = seq.count("C")	
-	numFreqs['G'] = seq.count("G")	
-	numFreqs['T'] = seq.count("T")	
-	for char in "ACGT":
-		numFreqs[char] /= len(seq)
+		fastFile.readline()
+		seq = fastFile.read().replace("N", "A").replace("\n", "")
+	numFreqs['A'] = seq.count("A") / len(seq) 
+	numFreqs['C'] = seq.count("C") / len(seq)
+	numFreqs['G'] = seq.count("G") / len(seq)
+	numFreqs['T'] = seq.count("T") / len(seq)
+	#for char in "ACGT":
+	#	numFreqs[char] /= len(seq)
 	return numFreqs
 
 def diNucFreq(fileName):
