@@ -1,5 +1,8 @@
 #!/usr/local/bin/python3
 
+#Kirolos Shahat
+#rev.py -- Reverse complement a sequence stored in a fasta file
+
 import sys
 
 def reverseComplement(fileName):
@@ -9,6 +12,8 @@ def reverseComplement(fileName):
 		 returns two items, the first is the first line as a string and
 		 the second is a string that contains the reverse complemented
 		 sequence with no delimiters or special characters.
+		 (I found that I could use a translation table to implement it
+		 more efficiently but I did not have the time to do so)
 	"""
 	newSequence = ""
 	firstLineVal = []
@@ -27,10 +32,9 @@ def reverseComplement(fileName):
 	return firstLineVal, newSequence
 				
 if __name__ == "__main__":	
-	fileName = "lambda.fasta"
+	fileName = "lambda.fasta" if len(sys.argv) < 2 else str(sys.argv[1])
+	#default line for fasta file format printing	
 	DEFAULT_LINE_LEN = 70	
-	if len(sys.argv) == 2:
-		fileName = str(sys.argv[1])
 	
 	firstLine, RCSequence = reverseComplement(fileName)
 	with open(fileName.split(".")[0] + ".rev.fasta", "w+") as revFile:	
