@@ -2,22 +2,24 @@
 
 import sys
 
+def countNuc(seq, n = 0):
+	countDict = {}
+	for index in range(0, len(seq) - n):
+		temp = seq[index: index + n + 1]
+		if temp not in countDict:
+			countDict[temp] = 0
+		countDict[temp] += 1
+	return countDict
+		
 def nucFreq(fileName, n = 0):
 	""" Computes the frequency of each dinucleotide in fileName
 			which is assumed to be a fasta file. Returns a dictionary of
 			size 16
 	"""
-	numFreqs = {}
 	with open(fileName) as fastFile:
 		fastFile.readline()
 		seq = fastFile.read().replace("N", "A").replace("\n", "")
-	#wanted to use count here but it did not give the proper
-	#value because "AAA".count("AA") = 1 but it should be 2
-	for i in range(0, len(seq) - n):
-		temp = seq[i:i+n + 1]
-		if temp not in numFreqs:
-			numFreqs[temp] = 0
-		numFreqs[temp] += 1
+	numFreqs = countNuc(seq, n)
 	for key in numFreqs:
 		numFreqs[key] /= (len(seq) - n)
 	return numFreqs
