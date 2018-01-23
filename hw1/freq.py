@@ -1,8 +1,15 @@
 #!/usr/local/bin/python3
 
+#Kirolos Shahat
+#freq.py -- contains countNuc and nucFreq functions
+
 import sys
 
 def countNuc(seq, n = 0):
+	""" countNuc is a function that takes a sequence
+			of any kind and generates a dictionary of counts
+			(n+1) - mers keyed on the name.
+	"""
 	countDict = {}
 	for index in range(0, len(seq) - n):
 		temp = seq[index: index + n + 1]
@@ -12,9 +19,9 @@ def countNuc(seq, n = 0):
 	return countDict
 		
 def nucFreq(fileName, n = 0):
-	""" Computes the frequency of each dinucleotide in fileName
+	""" Computes the frequency of each (n+1)-nucleotide in fileName
 			which is assumed to be a fasta file. Returns a dictionary of
-			size 16
+			size 4^(n+1) of the frequency of each (n+1)-mer
 	"""
 	with open(fileName) as fastFile:
 		fastFile.readline()
@@ -25,9 +32,8 @@ def nucFreq(fileName, n = 0):
 	return numFreqs
 
 if __name__ == "__main__":
-	fileName = "lambda.fasta"
-	if len(sys.argv) == 2:
-		fileName = str(sys.argv[1])
+	fileName = "lambda.fasta" if len(sys.argv) < 2 else fileName = str(sys.argv[1])
+	#the following was done to print neatly into report.txt
 	print("\t Nucleotide Frequences:")
 	nuc = nucFreq(fileName)
 	for key in "ACGT":
