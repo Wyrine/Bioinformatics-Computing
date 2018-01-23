@@ -23,6 +23,7 @@ def getMultiProb(testingFile, baseProbability):
 	return log(testMulti)
 
 #yet to work for order = 0
+#goal to fix given free time
 def getMarkovProb(testingFile, trainingFile, piSet, order = 1):
 	with open(testingFile) as test:
 		test.readline()

@@ -44,5 +44,5 @@ def pseudoSequence(trainingFile, seqLen = 20000, order = 3):
 
 
 if __name__ == "__main__":
-	trainingFile = "human_mito.fasta"
+	trainingFile = "human_mito.fasta" if len(sys.argv) < 2 else str(sys.argv[1])
 	len(pseudoSequence(trainingFile))

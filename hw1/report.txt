@@ -40,7 +40,24 @@ CS 494
 	 TG: 0.07822519123317045
 	 TT: 0.06896765015154327
 
-6. 
+6. The program which computes the log probabilities is prob.py which 
+	 is an executable and thus can be run with "./prob.py" command. It is
+	 implemented in python3 and needs freq.py to be in the same directory
+	 because it imports the functions from it. It can optionally take two
+	 command line arguments which are the training fasta file and then
+	 testing fasta file, respectively. The probabilities that I have computed
+	 were as follows (markov is slightly off, could not find the reasoning): 
 
 	 Log probability (multinomial): -452.6623122326945
 	 Log probability (markov): -451.82756563340024
+
+7. The program which generates a random sequence is "geno.py" which is an
+	 executable and thus can be run with "./geno.py" command. It is implemented
+	 in python3 and needs freq.py to be in the same directory because it imports
+	 the functions from it. It can optionally take a command line argument that
+	 is the training sequence fasta file. The output is in fasta format with a header
+	 of ">RandomSequence"
+
+
+
+
