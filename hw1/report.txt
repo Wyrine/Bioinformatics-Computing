@@ -58,6 +58,5 @@ CS 494
 	 is the training sequence fasta file. The output is in fasta format with a header
 	 of ">RandomSequence"
 
-
-
+8. List of Collaborators: Toy Reid
 

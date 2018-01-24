@@ -32,7 +32,7 @@ def nucFreq(fileName, n = 0):
 	return numFreqs
 
 if __name__ == "__main__":
-	fileName = "lambda.fasta" if len(sys.argv) < 2 else fileName = str(sys.argv[1])
+	fileName = "lambda.fasta" if len(sys.argv) < 2 else str(sys.argv[1])
 	#the following was done to print neatly into report.txt
 	print("\t Nucleotide Frequences:")
 	nuc = nucFreq(fileName)
