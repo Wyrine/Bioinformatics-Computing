@@ -2,6 +2,33 @@ Kirolos Shahat
 2/6/18
 CS 594
 
-1. 
-2. 
-3. 
+1. The files are in human.fasta and fruit_fly.fasta respectively.
+2. globalign is written in python3 and needs the external numpy library in order to run.
+   It is an executable and is names globalign.py and thus can be run with the command ./globalign.py
+   It can optionally take command up to 5 command line arguments. The first two are the files to be
+   compared and the next three are scores such that argv[3] = match_score, argv[4] = mismatch_score
+   and argv[5] = gap_free.
+   
+   Optimal Global Alignment Score: -1016
+
+3. localign is written in python3 and needs the external numpy library in order to run.
+   It is an executable and is names localign.py and thus can be run with the command ./localign.py
+   It can optionally take command up to 5 command line arguments. The first two are the files to be
+   compared and the next three are scores such that argv[3] = match_score, argv[4] = mismatch_score
+   and argv[5] = gap_free.
+
+   Optimal Local Alignment Score: 820
+
+4. egfalign is written in python3 and needs the external numpy library in order to run.
+   It is an executable and is names egfalign.py and thus can be run with the command ./egfalign.py
+   It can optionally take command up to 5 command line arguments. The first two are the files to be
+   compared and the next three are scores such that argv[3] = match_score, argv[4] = mismatch_score
+   and argv[5] = gap_free. It currently is what seems to be an infinite loop.
+
+5. Alignment length: 1269, Identity: 73%, E-Value: 4e-65, Range1: 399, Range2: 204, Total: 603.
+   Max score: 235. Both scores were positive thus there is some region that overlaps.
+
+6. Blasttn: Top hits: Homo sapiens sonic Hedgehog: Accession: NG_007504.2 
+   Blastx: Predicted: sonic hedgehog protein isoform X1: Accession: XP_011514781.1
+
+7. Was not able to get to it due to time.
