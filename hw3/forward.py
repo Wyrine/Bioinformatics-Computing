@@ -19,18 +19,23 @@ def runForward(fName, fair, loaded):
     pastInstance.append(fair[benchMark[0]]*transition*fair[benchMark[0]])
     
     for t in range(1, len(benchMark)):
-        bVal = benchMark[t]
-        fVal = fair[bVal]
-        lVal = loaded[bVal]
-        
-
-    return
+        fairProb = fair[benchMark[t]]
+        loadedProb = loaded[benchMark[t]]
+        prevF, prevL = pastInstance[0], pastInstance[1]
+        #fair * stay * fairProb + loaded * trans * fairProb
+        pastInstance[0]=(prevF*(1-transition) + prevL*transition) * fairProb
+        pastInstance[1]=(prevL*(1-transition) + prevF*transition) * loadedProb
+    return pastInstance
 
 if __name__ == "__main__":
     f1, f2 = "file1.txt", "file2.txt"
     if len(sys.argv) == 3:
         f1, f2 = sys.argv[1], sys.argv[2]
     fair, loaded = setupCasino()
-    runForward(f1, fair, loaded)
-    runForward(f2, fair, loaded)
+    one = runForward(f1, fair, loaded)
+    two = runForward(f2, fair, loaded)
+    print(one)
+    print(one[0] + one[1])
+    print(two)
+    print(two[0] + two[1])
 
