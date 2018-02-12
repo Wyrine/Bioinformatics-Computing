@@ -24,8 +24,15 @@ def genHMM(approxSize, states, pi, transProb):
     for i in range(len(states)):
         if pi[i] > pi[maxPriorState]:
             maxPriorState = i
-    for i in range(approxSize):
-        makeRoll(states[maxPriorState])
+
+    for t in range(approxSize):
+        seq += str(makeRoll(states[maxPriorState]))
+
+        for i in range(len(pi)):
+            pi[i] = 0
+        
+        
+
     return
 
 def makeRoll(state):
@@ -38,6 +45,10 @@ def makeRoll(state):
         if startVal <= rollVal:
             returnVal = i
     return returnVal
+
+
+
+
 
 if __name__ == "__main__":
     approxSize, pi, transProb = 300, [1, 0], 0.05
