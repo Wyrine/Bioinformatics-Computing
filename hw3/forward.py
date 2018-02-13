@@ -2,13 +2,13 @@
 
 import sys
 
-def setupCasino():
+def setupCasino(trans_f = 0.05, trans_l = 0.1):
     fair, loaded = {}, {}
     for i in range(1, 7):
         fair[str(i)] = 1.0/6
         loaded[str(i)] = 0.1
     loaded["6"] = 0.5
-    return fair, loaded, 0.05, 0.1
+    return fair, loaded, trans_f, trans_l
 
 def runForward(benchMark, fair, loaded, trans_f, trans_l):
     #assume pr(F) = 1, and pr(L) = 0 for initial state
