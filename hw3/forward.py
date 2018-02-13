@@ -10,11 +10,11 @@ def setupCasino():
     loaded["6"] = 0.5
     return fair, loaded, 0.05, 0.1
 
-def runForward(fName, fair, loaded, trans_f, trans_l):
+def runForward(benchMark, fair, loaded, trans_f, trans_l):
     #assume pr(F) = 1, and pr(L) = 0 for initial state
-    with open(fName) as f:
-        benchMark = f.read().replace("\n", "")
+    #a is previous fair state, assumed to be set as 1
     a = (1-trans_f) * fair[benchMark[0]]
+    #b is previous loaded state, assumed to be set as 0
     b = trans_f*loaded[benchMark[0]]
     
     for t in range(1, len(benchMark)):
@@ -32,9 +32,16 @@ if __name__ == "__main__":
     f1, f2 = "file1.txt", "file2.txt"
     if len(sys.argv) == 3:
         f1, f2 = sys.argv[1], sys.argv[2]
+
     fair, loaded, trans_f, trans_l = setupCasino()
-    one = runForward(f1, fair, loaded, trans_f, trans_l)
-    two = runForward(f2, fair, loaded, trans_f, trans_l)
+
+    with open(f1) as f:
+        benchMark = f.read().replace("\n", "").replace(" ", "")
+    one = runForward(benchMark, fair, loaded, trans_f, trans_l)
     print(one[0] + one[1])
+
+    with open(f2) as f:
+        benchMark = f.read().replace("\n", "").replace(" ", "")
+    two = runForward(benchMark, fair, loaded, trans_f, trans_l)
     print(two[0] + two[1])
 

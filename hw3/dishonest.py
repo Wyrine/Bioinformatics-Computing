@@ -2,6 +2,7 @@
 
 import sys
 from random import random
+import forward as fwd 
 
 def genHMM(approxSize, states, pi, transProb):
     """ 
@@ -45,10 +46,6 @@ def makeRoll(state):
         if startVal <= rollVal:
             returnVal = i
     return returnVal
-
-
-
-
 
 if __name__ == "__main__":
     approxSize, pi, transProb = 300, [1, 0], 0.05

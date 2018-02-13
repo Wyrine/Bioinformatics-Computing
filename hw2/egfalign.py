@@ -14,6 +14,7 @@ def gapFreeAlign(seq1, seq2, scoring):
     for i in range(1, len(seq1) + 1):
         for j in range(1, len(seq2) + 1):
             print(i, j) 
+            print(len(seq1), len(seq2))
             #left up and diag are the three cases and thus represent the scores for each
             left = mat[i, j-1] + scoring[2]
             up = mat[i-1, j] + scoring[2]
