@@ -1,7 +1,6 @@
 #!/usr/local/bin/python3
 
 import sys
-import numpy as np
 
 def setupCasino():
     fair, loaded = {}, {}
@@ -9,14 +8,14 @@ def setupCasino():
         fair[str(i)] = 1.0/6
         loaded[str(i)] = 0.1
     loaded["6"] = 0.5
-    return fair, loaded, 0.05, 0.05
+    return fair, loaded, 0.05, 0.1
 
 def runForward(fName, fair, loaded, trans_f, trans_l):
     #assume pr(F) = 1, and pr(L) = 0 for initial state
     with open(fName) as f:
         benchMark = f.read().replace("\n", "")
-    a = np.float128((1-trans_f) * fair[benchMark[0]])
-    b = np.float128(trans_f*loaded[benchMark[0]])
+    a = (1-trans_f) * fair[benchMark[0]]
+    b = trans_f*loaded[benchMark[0]]
     
     for t in range(1, len(benchMark)):
         fairProb = fair[benchMark[t]]
