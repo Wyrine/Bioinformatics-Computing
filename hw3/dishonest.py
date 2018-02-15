@@ -2,7 +2,7 @@
 
 import sys
 from random import random
-import forward as fwd 
+import forward as fwd
 
 def genHMM(length, states, transProb):
     """ 
