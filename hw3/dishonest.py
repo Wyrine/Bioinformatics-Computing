@@ -14,7 +14,7 @@ def genHMM(length, states, transProb):
     seq = ""
     #0 is fair state, 1 is loaded
     curState = 0
-    while len(seq) < 300:
+    while len(seq) < length:
         curState = 0 if random() <= (1-transProb[curState]) else 1
         seq += makeRoll(states[curState])
     return seq
@@ -37,5 +37,5 @@ if __name__ == "__main__":
         approxSize = int(sys.argv[1])
     seq = genHMM(approxSize, [fair, loaded], [trans_f, trans_l])
     seqScore = fwd.runForward(seq, fair, loaded, trans_f, trans_l)
-    print(seq)
-    print(seqScore[0] + seqScore[1])
+    print("Seq:", seq)
+    print("Score:", seqScore[0] + seqScore[1])
