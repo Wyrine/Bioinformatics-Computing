@@ -30,4 +30,12 @@ HW 3 Report
 	file1.txt forward score: 2.719953435694037e-232
 	file2.txt forward score: 1.9353303202291558e-232
 
+4. The program that runs the viterbi algorithm on the two files is called viterbi.py
+    and is a python 3 script which can optionally take two command line arguments
+    which are two testing files. The program outputs the results into viterbi1.txt
+    and viterbi2.txt for argv[1] and argv[2] respectively. The script is already an
+    executable and thus can be run using ./viterby.py
 
+5. The two files are named virulent.fasta and non_virulent.fasta
+
+7.
