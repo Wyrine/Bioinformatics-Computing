@@ -37,5 +37,6 @@ if __name__ == "__main__":
         approxSize = int(sys.argv[1])
     seq = genHMM(approxSize, [fair, loaded], [trans_f, trans_l])
     seqScore = fwd.runForward(seq, fair, loaded, trans_f, trans_l)
-    print("Seq:", seq)
-    print("Score:", seqScore[0] + seqScore[1])
+    for i in range(0, len(seq), 50):
+        print("\t" + seq[i:i+50])
+    print("\tForward score:", seqScore[0] + seqScore[1])

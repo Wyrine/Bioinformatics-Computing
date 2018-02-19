@@ -1,0 +1,33 @@
+Kirolos Shahat
+CS 594
+HW 3 Report
+
+1. The program that generates a random sequence based on the dishonest casino
+    is a python 3 script titled "dishonest.py" and is an executable, thus can
+    be run with "./dishonest.py" and it can optionally take one command line
+    argument which is the length of the sequence to generate. 
+    
+    ~~~~~~~~ Sample Output with forward score ~~~~~~~~
+
+	13463134616131565336216624335145116441654235412555
+	11555166624456521443222344612312311224411426561225
+	52451312146564134554245453331616641126635551161356
+	52646134465652265123541662442242311312216135464553
+	66633564315334366541511236215363111353623324524346
+	24451455423335113311364652116164635451454436131156
+	Forward score: 1.0629649927781847e-236
+
+2. The files are file1.txt and file2.txt respectively.
+
+3. The program that runs the forward algorithm is called "forward.py" and can
+    optionally take two command line arguments that are two files which each
+    contain a sequence which can be dice rolls to base the dishonest casino
+    on. The program is a python 3 script and needs to external libraries and
+    can be run as "./forward.py".
+    
+    ~~~~~~~~~ Forward Score of each file ~~~~~~~~~~~~
+
+	file1.txt forward score: 2.719953435694037e-232
+	file2.txt forward score: 1.9353303202291558e-232
+
+

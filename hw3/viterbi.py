@@ -42,7 +42,7 @@ def runViterbi(benchMark, fair, loaded, trans_f, trans_l):
     return a, b, vitSeq
 
 def initVit(fName, out):
-    with open(f1) as f:
+    with open(fName) as f:
         benchMark = f.read().replace("\n", "").replace(" ", "")
     a, b, seq = runViterbi(benchMark, fair, loaded, trans_f, trans_l)
     with open(out, 'w') as f:

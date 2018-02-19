@@ -28,20 +28,17 @@ def runForward(benchMark, fair, loaded, trans_f, trans_l):
         b = (prevL*(1-trans_l) + prevF*trans_f) * loadedProb
     return a, b
 
+def initAndRunForward(fName):
+    fair, loaded, trans_f, trans_l = setupCasino()
+    with open(fName) as f:
+        benchMark = f.read().replace("\n", "").replace(" ", "")
+    endProbs = runForward(benchMark, fair, loaded, trans_f, trans_l)
+    print("\t" + fName + " forward score:", endProbs[0] + endProbs[1])
+
 if __name__ == "__main__":
     f1, f2 = "file1.txt", "file2.txt"
     if len(sys.argv) == 3:
         f1, f2 = sys.argv[1], sys.argv[2]
 
-    fair, loaded, trans_f, trans_l = setupCasino()
-
-    with open(f1) as f:
-        benchMark = f.read().replace("\n", "").replace(" ", "")
-    one = runForward(benchMark, fair, loaded, trans_f, trans_l)
-    print(one[0] + one[1])
-
-    with open(f2) as f:
-        benchMark = f.read().replace("\n", "").replace(" ", "")
-    two = runForward(benchMark, fair, loaded, trans_f, trans_l)
-    print(two[0] + two[1])
-
+    initAndRunForward(f1)
+    initAndRunForward(f2)
