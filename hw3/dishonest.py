@@ -1,5 +1,10 @@
 #!/usr/local/bin/python3
 
+# Author: Kirolos Shahat
+# Date: 02/19/18
+# Course: CS 594
+# Generate Sequence Based on Hidden Markov Model
+
 import sys
 from random import random
 import forward as fwd
@@ -20,12 +25,16 @@ def genHMM(length, states, transProb):
     return seq
 
 def makeRoll(state):
+    """
+        Return a dice roll based off a dictionary 
+        of probabilities of rolls
+    """
     rollVal = random()
     startVal = 0.0
     #to account for the possibiity of getting a 1
     returnVal = "6"
     for i in "123456":
-        startVal = startVal + state[  i  ]
+        startVal = startVal + state[i]
         if startVal <= rollVal:
             returnVal = i
     return returnVal
