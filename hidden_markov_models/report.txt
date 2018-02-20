@@ -5,7 +5,9 @@ HW 3 Report
 1. The program that generates a random sequence based on the dishonest casino
     is a python 3 script titled "dishonest.py" and is an executable, thus can
     be run with "./dishonest.py" and it can optionally take one command line
-    argument which is the length of the sequence to generate. 
+    argument which is the length of the sequence to generate. The program needs
+    forward.py to be in the same directory because it uses it to get the forward
+    score as well as setting up the probabilities for fair/loaded.
     
     ~~~~~~~~ Sample Output with forward score ~~~~~~~~
 
@@ -34,8 +36,10 @@ HW 3 Report
     and is a python 3 script which can optionally take two command line arguments
     which are two testing files. The program outputs the results into viterbi1.txt
     and viterbi2.txt for argv[1] and argv[2] respectively. The script is already an
-    executable and thus can be run using ./viterby.py
+    executable and thus can be run using "./viterby.py". It needs forward.py to be
+    in the same directory because it uses to set up the initial probabilites for
+    fair/loaded.
 
 5. The two files are named virulent.fasta and non_virulent.fasta
 
-7.
+7. The predictions are in vir.predict and non_vir.predict respectively.
