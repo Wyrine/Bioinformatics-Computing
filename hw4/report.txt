@@ -1,0 +1,15 @@
+Kirolos Shahat
+CS 594 -- Bioinformatics
+3/27/18
+
+7. Comparing the two strands we notice that there are roughly an equivalent amount
+		of SNPs compared to indels but there seems to be a difference in location. The
+		SNPs seem to be closer to the beginning and end of the sequence relative to the
+		indels and the indels seems to be centered around position 2600k and fairly
+		closely compacted in that area. There are more SNPs than indels by a fair
+		amount but the main detail is the location. This could be due to natural
+		selection and can potentially affect the structural difference because
+		the non_virulent has significantly more deletions. Thus, it's likely that their
+		structure is similar until it gets to the "indel area."
+
+
