@@ -12,4 +12,8 @@ CS 594 -- Bioinformatics
 		the non_virulent has significantly more deletions. Thus, it's likely that their
 		structure is similar until it gets to the "indel area."
 
-
+11. 
+		Contig Statistics:
+				Average: 86316.346320
+				Longest: 984690
+				Total:231
