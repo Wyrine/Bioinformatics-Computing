@@ -12,8 +12,12 @@ CS 594 -- Bioinformatics
 		the non_virulent has significantly more deletions. Thus, it's likely that their
 		structure is similar until it gets to the "indel area."
 
-11. 
-		Contig Statistics:
+11. Contig Statistics:
 				Average: 86316.346320
 				Longest: 984690
 				Total:231
+	
+	I would say that it is not a good assembly because of the generated dotplot.
+	The diagonal is nearly empty and thus the assembly has little match. This could
+	be because of inferrence from inimportant regions over others and will likely
+	cause different structures.
