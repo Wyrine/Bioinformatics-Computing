@@ -1,0 +1,19 @@
+Kirolos Shahat
+CS 594 Report
+
+2) The program that computes the hamming distance is ham.py and needs numpy installed. It also
+		needs globalign.py to be in the same directory. ham.py can be run with './ham.py small.fasta'
+		and the command line argument is required. The result is already stored in small.out.txt
+
+3) The tree is attached as drawnTree.pdf
+
+5) Resulting file from dnadist is: dist.out.txt
+		Resulting files from kitch are: kitchFile.txt and kitchTree.txt
+		Resulting files from neighbor are: neighborFile.txt and neighborTree.txt
+
+6) Clustal output file is clustalOutput.txt
+		Muscle output file is muscleOutput.txt
+				Note: Both are in clustalW format with the clustal also having character count
+
+		- The clustal and muscle trees seem similar to neighbor but not to kitch.
+		- Clustal and Muscle largely seem to agree on the tree information.
