@@ -1,3 +1,9 @@
+1: gi|18389868|gb|AF422574.1| Uncultured bacterium clone d4050
+2: gi|18389842|gb|AF422548.1| Uncultured bacterium clone d4020 
+3: gi|18389849|gb|AF422555.1| Uncultured bacterium clone d4030
+4: gi|18389867|gb|AF422573.1| Uncultured bacterium clone d4049
+5: gi|18389848|gb|AF422554.1| Uncultured bacterium clone d4029
+
   1 2 3 4 5
 0 0 6 7 7 9 
 1 6 0 1 5 3 

@@ -28,12 +28,13 @@ def printTraceBack(seq1, seq2, tb, indexList):
 
 def setupHamming():
 		with open(sys.argv[1]) as f:
-				f.readline()
+				print('1:', f.readline().replace('>', '').replace('\n', ''))
 				data = ""
 				seqs = []
 				for line in f:
 						if '>' in line:
 								seqs.append(data)
+								print(str(len(seqs) + 1) + ':', line.replace('>', '').replace('\n', ''))
 								data = ""
 						else:
 								data += line.replace('\n', '').replace(' ', '')
@@ -52,7 +53,7 @@ if __name__ == "__main__":
 				print("Usage: ./ham.py <seq.fasta>")
 				sys.exit(1)
 		hams = setupHamming()
-		print("  " + " ".join([str(i) for i in range(1, len(hams)+1)]))
+		print("\n  " + " ".join([str(i) for i in range(1, len(hams)+1)]))
 		for i in range(len(hams)):
 				print(str(i) + " ", end = "")
 				for j in range(len(hams)):
