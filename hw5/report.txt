@@ -10,6 +10,10 @@ CS 594 Report
 5) Resulting file from dnadist is: dist.out.txt
 		Resulting files from kitch are: kitchFile.txt and kitchTree.txt
 		Resulting files from neighbor are: neighborFile.txt and neighborTree.txt
+		
+		The trees generated aren't very consistent and thus is likely due to the ultrametric property
+		assumption that UPGMA makes. The data set likely does not satisfy that assumption and thus using
+		UPGMA does not create good trees.
 
 6) Clustal output file is clustalOutput.txt
 		Muscle output file is muscleOutput.txt
