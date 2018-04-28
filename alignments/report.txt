@@ -7,7 +7,7 @@ CS 594
    It is an executable and is names globalign.py and thus can be run with the command ./globalign.py
    It can optionally take command up to 5 command line arguments. The first two are the files to be
    compared and the next three are scores such that argv[3] = match_score, argv[4] = mismatch_score
-   and argv[5] = gap_free.
+   and argv[5] = gap_fee.
    
    Optimal Global Alignment Score: -1016
 
@@ -15,7 +15,7 @@ CS 594
    It is an executable and is names localign.py and thus can be run with the command ./localign.py
    It can optionally take command up to 5 command line arguments. The first two are the files to be
    compared and the next three are scores such that argv[3] = match_score, argv[4] = mismatch_score
-   and argv[5] = gap_free.
+   and argv[5] = gap_fee.
 
    Optimal Local Alignment Score: 820
 
@@ -23,7 +23,9 @@ CS 594
    It is an executable and is names egfalign.py and thus can be run with the command ./egfalign.py
    It can optionally take command up to 5 command line arguments. The first two are the files to be
    compared and the next three are scores such that argv[3] = match_score, argv[4] = mismatch_score
-   and argv[5] = gap_free. It currently is what seems to be an infinite loop.
+   and argv[5] = gap_fee.
+
+	 Optimal End Gap Free Score: 620
 
 5. Alignment length: 1269, Identity: 73%, E-Value: 4e-65, Range1: 399, Range2: 204, Total: 603.
    Max score: 235. Both scores were positive thus there is some region that overlaps.
@@ -31,4 +33,10 @@ CS 594
 6. Blasttn: Top hits: Homo sapiens sonic Hedgehog: Accession: NG_007504.2 
    Blastx: Predicted: sonic hedgehog protein isoform X1: Accession: XP_011514781.1
 
-7. Was not able to get to it due to time.
+7. egf-linear.py is written in python3 and needs the external numpy library in order to run.
+		It is an executable and thus can be run with the command ./egf-linear.py
+		It can optionally take command line arguments of up to 5. The first two are the files to be
+		compared and the next three are scores such that argv[3] = match_score, argv[4] = mismatch_score
+		and argv[5] = gap_fee.
+
+		Optimal End Gap Free Score: 620
